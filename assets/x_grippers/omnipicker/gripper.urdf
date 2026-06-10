@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="omnipicker">
+  <link name="gripper_base">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/base_link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/base_link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow1_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow1_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow2_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow2_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow3_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow3_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow_loop_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_narrow_loop_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide1_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide1_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide2_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide2_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide3_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide3_Link.stl"/></geometry></collision>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide_loop_Link.stl"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="meshes/hand_wide_loop_Link.stl"/></geometry></collision>
+    <inertial><mass value="0.3"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial>
+  </link>
+</robot>

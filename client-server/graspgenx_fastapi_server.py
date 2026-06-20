@@ -64,7 +64,10 @@ class InferRequest(BaseModel):
     num_grasps: int = 800
     grasp_threshold: float = 0.85
     topk_num_grasps: int = -1
-    remove_outliers: bool = False
+
+
+# GLB(y-up) -> Z-up basis rotation (constant; matches every manifest's basis).
+_GLB_TO_ZUP = np.array([[1.0, 0.0, 0.0], [0.0, 0.0, -1.0], [0.0, 1.0, 0.0]])
 
 
 class _ServerState:
@@ -121,16 +124,29 @@ def infer(req: InferRequest) -> dict:
         raise HTTPException(500, f"failed to load gripper '{gripper_name}': {exc}") from exc
 
     t0 = time.time()
-    grasps_t, conf_t = GraspGenXSampler.run_inference(
-        pts,
+    # GraspMoE planner: OBB-aware top-down + side grasps. Its top face approaches
+    # along world +Z, so rotate the GLB(y-up) input to Z-up, run, rotate grasps back.
+    from graspgenx.samplers import run_planner_on_object
+
+    pts_zup = (pts.astype(np.float64) @ _GLB_TO_ZUP.T).astype(np.float32)
+    g, conf_arr, _tags, _obb = run_planner_on_object(
+        pts_zup,
         sampler,
+        planner="graspmoe",
         grasp_threshold=req.grasp_threshold,
         num_grasps=req.num_grasps,
         topk_num_grasps=req.topk_num_grasps,
-        remove_outliers=req.remove_outliers,
+        moe_num_yaws=72,
+        moe_z_offsets_cm=(-2, -1, 0),
+        moe_obb_density="dense-topandside",
+        moe_obb_position_spacing_cm=0.5,
     )
-    grasps = grasps_t.cpu().numpy().astype(float) if len(grasps_t) else np.empty((0, 4, 4))
-    conf = conf_t.cpu().numpy().astype(float) if len(conf_t) else np.empty((0,))
+    grasps = np.asarray(g, dtype=float) if len(g) else np.empty((0, 4, 4))
+    conf = np.asarray(conf_arr, dtype=float) if len(conf_arr) else np.empty((0,))
+    _R_back = _GLB_TO_ZUP.T
+    for _i in range(len(grasps)):
+        grasps[_i][:3, :3] = _R_back @ grasps[_i][:3, :3]
+        grasps[_i][:3, 3] = _R_back @ grasps[_i][:3, 3]
 
     info = sampler.get_gripper_info()
     return {

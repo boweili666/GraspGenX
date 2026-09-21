@@ -8,28 +8,28 @@
   "fingertip": [
     0.0,
     0.0,
-    0.1385
+    0.1375399999525024
   ],
   "sweep_volume": {
     "extents": [
-      0.1,
-      0.046,
-      0.06
+      0.09999939887572709,
+      0.04304517903074155,
+      0.07759124832227829
     ],
     "offset": [
       0.0,
       0.0,
-      0.13
+      0.12020937155466523
     ],
     "extents2": [
-      0.05,
-      0.046,
-      0.06
+      0.049999699437863546,
+      0.04304517903074155,
+      0.07759124832227829
     ],
     "offset2": [
       0.0,
       0.0,
-      0.13
+      0.12020937155466523
     ]
   },
   "standoff": [
@@ -38,14 +38,14 @@
   ],
   "bbox": [
     [
-      -0.06823000004515051,
-      -0.029998999089002498,
+      -0.06823000004515045,
+      -0.02987840908900263,
       0.0
     ],
     [
       0.06823000004515045,
-      0.08382602846352795,
-      0.16000499576330188
+      0.08394661846352793,
+      0.15900499571580437
     ]
   ],
   "symmetric": true,
@@ -55,10 +55,30 @@
     "effector": "left",
     "usd": "/home/lbw/3dgen-project/r2s2r_dev/assets/robots/brickbench/robot_assets/Galaxea/R1_Lite/Galaxea_R1_Lite.usda",
     "bodies": [
-      "link6",
-      "finger1",
-      "finger2"
+      "/Galaxea_R1_Lite/A1X_Left/link6",
+      "/Galaxea_R1_Lite/A1X_Left/finger1",
+      "/Galaxea_R1_Lite/A1X_Left/finger2"
     ],
-    "frame": "origin = EE link origin; Z = approach (EE +x); X = closing (EE +y); fingertip = mid finger pad"
+    "frame": "origin = gripper base (most proximal collision point); Z = measured approach axis; X = closing axis; fingertip = the controller grasp frame origin",
+    "tcp_to_base_shift_m": 0.11753999995250242,
+    "geometry": {
+      "approach": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "closing": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "pad_span": [
+        -0.036126252558976335,
+        0.041464995763301954
+      ],
+      "pad_mid": 0.0026693716021628094,
+      "opening": 0.09999939887572709,
+      "pad_height": 0.04304517903074155
+    }
   }
 }

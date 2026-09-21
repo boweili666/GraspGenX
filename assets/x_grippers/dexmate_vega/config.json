@@ -1,0 +1,84 @@
+{
+  "open": {
+    "L_gripper_joint": 0.45
+  },
+  "close": {
+    "L_gripper_joint": 0.0
+  },
+  "fingertip": [
+    0.0,
+    0.0,
+    0.1680000049309776
+  ],
+  "sweep_volume": {
+    "extents": [
+      0.10261711501212807,
+      0.02261497221171902,
+      0.07383800505243196
+    ],
+    "offset": [
+      0.0,
+      0.0,
+      0.16045227236367177
+    ],
+    "extents2": [
+      0.051308557506064036,
+      0.02261497221171902,
+      0.07383800505243196
+    ],
+    "offset2": [
+      0.0,
+      0.0,
+      0.16045227236367177
+    ]
+  },
+  "standoff": [
+    0.0,
+    0.02
+  ],
+  "bbox": [
+    [
+      -0.06654674586794129,
+      -0.014083861892358614,
+      0.0
+    ],
+    [
+      0.06654679531068945,
+      0.06477340640404153,
+      0.1973712888403663
+    ]
+  ],
+  "symmetric": true,
+  "type": "parallel_2f",
+  "_source": {
+    "robot": "dexmate_vega_1u",
+    "effector": "left",
+    "usd": "/home/lbw/3dgen-project/r2s2r_dev/assets/robots/brickbench/robot_assets/DexMate/vega_1u_gripper.usda",
+    "bodies": [
+      "/vega_1u/L_ee_link/gripper_link",
+      "/vega_1u/L_ee_link/gripper_active_link",
+      "/vega_1u/L_ee_link/gripper_passive_link"
+    ],
+    "frame": "origin = gripper base (most proximal collision point); Z = measured approach axis; X = closing axis; fingertip = the controller grasp frame origin",
+    "tcp_to_base_shift_m": 0.1980000049309776,
+    "geometry": {
+      "approach": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "closing": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "pad_span": [
+        -0.07446673509352181,
+        -0.0006287300410898339
+      ],
+      "pad_mid": -0.03754773256730582,
+      "opening": 0.10261711501212807,
+      "pad_height": 0.02261497221171902
+    }
+  }
+}

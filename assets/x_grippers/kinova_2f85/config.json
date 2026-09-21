@@ -1,0 +1,90 @@
+{
+  "open": {
+    "finger_joint": 0.3
+  },
+  "close": {
+    "finger_joint": 0.7
+  },
+  "fingertip": [
+    0.0,
+    0.0,
+    0.14509507273240677
+  ],
+  "sweep_volume": {
+    "extents": [
+      0.12002399004662415,
+      0.035000327462818344,
+      0.0655916663593118
+    ],
+    "offset": [
+      0.0,
+      0.0,
+      0.14509507273240677
+    ],
+    "extents2": [
+      0.06001199502331207,
+      0.035000327462818344,
+      0.0655916663593118
+    ],
+    "offset2": [
+      0.0,
+      0.0,
+      0.14509507273240677
+    ]
+  },
+  "standoff": [
+    0.0,
+    0.02
+  ],
+  "bbox": [
+    [
+      -0.07032568510156101,
+      -0.03823139891028412,
+      0.0
+    ],
+    [
+      0.070326036428369,
+      0.03832210972905152,
+      0.1804790848203365
+    ]
+  ],
+  "symmetric": true,
+  "type": "parallel_2f",
+  "_source": {
+    "robot": "kinova_gen3_2f85",
+    "effector": "arm",
+    "usd": "/home/lbw/3dgen-project/r2s2r_dev/assets/robots/brickbench/robot_assets/Kinova/usd/kinova.usda",
+    "bodies": [
+      "/World/gen3brakesfix/bracelet_link",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/left_inner_finger",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/left_inner_knuckle",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/left_outer_finger",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/left_outer_knuckle",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/right_inner_finger",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/right_inner_knuckle",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/right_outer_finger",
+      "/World/Robotiq_2F_85_edit/Robotiq_2F_85/right_outer_knuckle"
+    ],
+    "frame": "origin = gripper base (most proximal collision point); Z = measured approach axis; X = closing axis; fingertip = the controller grasp frame origin",
+    "tcp_to_base_shift_m": 0.21452508309656435,
+    "geometry": {
+      "approach": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "closing": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "pad_span": [
+        -0.10222584354381348,
+        -0.036634177184501675
+      ],
+      "pad_mid": -0.06943001036415758,
+      "opening": 0.12002399004662415,
+      "pad_height": 0.035000327462818344
+    }
+  }
+}

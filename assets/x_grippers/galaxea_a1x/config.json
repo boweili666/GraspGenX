@@ -1,0 +1,64 @@
+{
+  "open": {
+    "left_gripper_joint": 0.05
+  },
+  "close": {
+    "left_gripper_joint": 0.0
+  },
+  "fingertip": [
+    0.0,
+    0.0,
+    0.1385
+  ],
+  "sweep_volume": {
+    "extents": [
+      0.1,
+      0.046,
+      0.06
+    ],
+    "offset": [
+      0.0,
+      0.0,
+      0.13
+    ],
+    "extents2": [
+      0.05,
+      0.046,
+      0.06
+    ],
+    "offset2": [
+      0.0,
+      0.0,
+      0.13
+    ]
+  },
+  "standoff": [
+    0.0,
+    0.02
+  ],
+  "bbox": [
+    [
+      -0.06823000004515051,
+      -0.029998999089002498,
+      0.0
+    ],
+    [
+      0.06823000004515045,
+      0.08382602846352795,
+      0.16000499576330188
+    ]
+  ],
+  "symmetric": true,
+  "type": "parallel_2f",
+  "_source": {
+    "robot": "galaxea_r1_lite_a1x",
+    "effector": "left",
+    "usd": "/home/lbw/3dgen-project/r2s2r_dev/assets/robots/brickbench/robot_assets/Galaxea/R1_Lite/Galaxea_R1_Lite.usda",
+    "bodies": [
+      "link6",
+      "finger1",
+      "finger2"
+    ],
+    "frame": "origin = EE link origin; Z = approach (EE +x); X = closing (EE +y); fingertip = mid finger pad"
+  }
+}
